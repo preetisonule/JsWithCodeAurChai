@@ -1,0 +1,48 @@
+<!-- Parent child nodes -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">monday</div>
+        <div class="day">tuesday</div>
+        <div class="day">wednesday</div>
+        <div class="day">thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector(".parent")
+    console.log(parent);
+    console.log(parent.children); // [div.day, div.day, div.day, div.day]
+    console.log(parent.children[1].innerText); // tuesday
+    // for (let i = 0; i <parent.children.length; i++) {
+    //     console.log(parent.children[i].innerText)
+    // }
+
+    // 1st method
+    parent.firstElementChild.style.color = 'orange';
+    parent.lastElementChild.style.color = "blue";
+
+    // second method
+    const day1 = document.querySelector(".day");
+    day1.style.color = "red"
+
+    // parent through children : queryselector traverse tree which is not optimised.
+    console.log(day1.parentElement);
+
+    // siblings
+    console.log(day1.nextElementSibling);
+    
+    // nodes
+    console.log("Nodes : ", parent.childNodes);
+    // what do you think? how many nodes are there? 4?
+    // nope. break line also counts. but it counts only once uske baad ke empty lines doesnot count.
+    
+    
+    
+</script>
+</html>
