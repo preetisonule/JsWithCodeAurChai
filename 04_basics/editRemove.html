@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;" >
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+
+    // traversing tree approach
+    // function addLang(langName){
+    //     const li = document.createElement('li');
+    //     li.innerHTML = `${langName}`;
+    //     document.querySelector('.language').appendChild(li);
+    // }
+    // addLang("Python")
+    // addLang("C++")
+    // addLang("Java")
+
+    // another approach
+    function addlang(lang){
+       const li = document.createElement('li');
+       li.appendChild(document.createTextNode(lang));
+       document.querySelector('.language').appendChild(li);
+    }
+
+    addlang("Python")
+    addlang("C++")
+    addlang("Java")
+
+    // Edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "mojo"  : not optimised
+    // we just changed html
+
+    const newli = document.createElement('li')
+    newli.textContent = "mojo"
+    secondLang.replaceWith(newli)
+    // optimised
+    // we created new element and then replaced it.
+
+    const firstlang = document.querySelector('li:first-child')
+    firstlang.outerHTML = '<li>Ruby</li>'
+
+
+    // remove 
+    const lastlang = document.querySelector('li:last-child');
+    lastlang.remove();
+
+</script>
+</html>
