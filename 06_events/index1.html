@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <h1> Amazing images </h1>
+    <img src="Avengers.jpg"  id = "avg" alt="Avengers">
+    <img src="blueLock.jpg"  id = "bl" alt="Avengers">
+    <img src="ladyJoker.jpg"  id = "lj" alt="Avengers">
+    <img src="levelUp.jpg"  id = "lu" alt="Avengers">
+    <img src="cuteBoy.jpg"  id = "cb" alt="Avengers">
+</body>
+<script>
+    const id = document.getElementById('avg');
+    id.addEventListener('click', function(e){
+        alert('this is avengers'); 
+    } ,false)
+</script>
+</html>
